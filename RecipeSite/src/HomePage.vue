@@ -1,9 +1,9 @@
 <script setup>
-// import categories from './components/categories.vue';
+import Gallery from './components/Gallery.vue';
 </script>
 
 <template>
-  <h1>Välkommen till vår recept sida</h1>
+    <Gallery />
 </template>
 
 <style scoped>
