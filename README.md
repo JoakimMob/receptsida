@@ -4,6 +4,10 @@
 
 This is a recipe application built with Vue.js, featuring an intuitive and user-friendly interface allowing users to explore and interact with a collection of recipes fetched dynamically via API. The application displays recipes with details such as ingredients, ratings, and other information. Users can filter recipes by category and add comments and ratings, creating an interactive experience.
 
+#### Contributors
+
+Hanna Friberg, Ismail El kawwash, Joakim Moberg and Anna Axelsson
+
 ## Technologies used:
 
 - Vue.js
