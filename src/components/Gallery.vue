@@ -22,6 +22,7 @@ export default {
         <li class="card" v-for="recipe in recipes" :key="recipe.id">
             <img :src="recipe.imageUrl">
             <div>{{ recipe.title }}</div>
+            <span><i class="fa-regular fa-clock"></i> {{ recipe.timeInMins }} min</span>
         </li>
     </div>
 </template>
@@ -44,13 +45,12 @@ export default {
     max-height: 300px;
     border-radius: 3px;
     text-align: center;
-    font-size: 1.5rem;
+    font-size: 1rem;
 }
 
-.card  img{
-    margin:8px auto;
+.card img {
+    margin: 8px auto;
     height: 220px;
     width: 95%;
 }
-
 </style>
