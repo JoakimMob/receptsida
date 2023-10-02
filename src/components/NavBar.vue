@@ -1,7 +1,8 @@
 <template>
     <div>
         <h3>{{ message }}</h3>
-        <ul>
+
+       <ul>
             <li></li>
         </ul>
     </div>
@@ -10,14 +11,16 @@
 <script>
 import Categories from './Categories.vue';
 
+
 export default {
     data() {
         return {
             message: 'menyrackare'
+
         };
     },
     created() {
-        
+       
 </script>
 
 <style scoped>

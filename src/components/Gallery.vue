@@ -1,25 +1,20 @@
-<script >
+<script>
 
 export default {
-    data() {
-        return {
-            recipes: [],
+    props: {
+        recipes: {
+            type: Array,
+            required: true,
+            default: () => []
         }
-    },
-    created() {
-        fetch('https://jau22-recept-grupp5-1bixsi9xz341.reky.se/recipes')
-            .then(response => response.json())
-            .then(data => {
-                this.recipes = data
-                console.log(data)
-            })
-    },
+    }
 }
+
 </script>
 
 <template>
     <div class="gallery-list">
-        <li class="card" v-for="recipe in recipes" :key="recipe.id">
+        <li class="card" v-for="recipe in recipes" :key="recipe._id">
             <img :src="recipe.imageUrl">
             <div>{{ recipe.title }}</div>
             <span><i class="fa-regular fa-clock"></i> {{ recipe.timeInMins }} min</span>
