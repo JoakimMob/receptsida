@@ -1,10 +1,10 @@
 <template>
     <div>
-        {{name}}
+        {{ name }}
     </div>
 </template>
 
-<script setup>
+<script>
     export default {
         props: {
             name: String
