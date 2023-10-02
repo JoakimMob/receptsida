@@ -1,3 +1,12 @@
+<template>
+    <div>
+        <h3>{{ message }}</h3>
+        <ul>
+            <li v-for="item in apiData" :key="item.id"><Categories :name="item.name"/></li>
+        </ul>
+    </div>
+</template>
+
 <script>
 import Categories from './Categories.vue';
 
@@ -19,14 +28,7 @@ export default {
 }
 </script>
 
-<template>
-    <div>
-        <h3>{{ message }}</h3>
-        <ul>
-            <li v-for="item in apiData" :key="item.id"><Categories :name="item.name"/></li>
-        </ul>
-    </div>
-</template>
+
 
 <style scoped>
 :root {
