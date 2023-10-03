@@ -1,5 +1,5 @@
 <template>
-    <RouterLink to="/">Go to Home</RouterLink>
+    <!-- <RouterLink to="/">Go to Home</RouterLink> -->
     <div>
         <h3>{{ message }}</h3>
         <i class="fa-solid fa-bars"></i>
@@ -27,7 +27,8 @@ export default {
             .catch(error => { console.error('An error occured: ',error);
         });
     },
-        components: { Categories, RouterLink }
+        components: { Categories }
+        // components: { Categories, RouterLink }
 }
 </script>
 
