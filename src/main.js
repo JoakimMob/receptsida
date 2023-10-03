@@ -7,5 +7,5 @@ import HomePage from './HomePage.vue'
 
 const app = createApp(HomePage) 
 
-app.use()
+// app.use()
 app.mount('#app')
