@@ -1,6 +1,8 @@
 <template>
+    <RouterLink to="/">Go to Home</RouterLink>
     <div>
         <h3>{{ message }}</h3>
+        <i class="fa-solid fa-bars"></i>
         <ul>
             <li v-for="item in apiData" :key="item.id"><Categories :name="item.name"/></li>
         </ul>
@@ -8,6 +10,7 @@
 </template>
 
 <script>
+import { RouterLink } from 'vue-router';
 import Categories from './Categories.vue';
 
 export default {
@@ -24,7 +27,7 @@ export default {
             .catch(error => { console.error('An error occured: ',error);
         });
     },
-        components: { Categories }
+        components: { Categories, RouterLink }
 }
 </script>
 

@@ -4,4 +4,8 @@ import { createApp } from 'vue'
 import HomePage from './HomePage.vue'
 
 
-createApp(HomePage).mount('#app')
+
+const app = createApp(HomePage) 
+
+app.use()
+app.mount('#app')
