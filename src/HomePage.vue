@@ -1,13 +1,7 @@
-<<<<<<< HEAD
 <script>
 import Gallery from '@/components/Gallery.vue';
 import NavBar from '@/components/NavBar.vue';
-=======
-<script setup>
-import Gallery from './components/Gallery.vue';
-import NavBar from './components/NavBar.vue';
-import CategoryFilter from './components/CategoryFilter.vue';
->>>>>>> c7bb6c3857412e9a1f8370d30b634ced3fa17b3a
+import CategoryFilter from '@/components/CategoryFilter.vue';
 import {RouterView} from 'vue-router';
 
 export default {
