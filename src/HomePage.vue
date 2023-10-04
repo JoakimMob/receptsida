@@ -1,7 +1,24 @@
+<script setup>
+import Gallery from './components/Gallery.vue';
+import NavBar from './components/NavBar.vue';
+import CategoryFilter from './components/CategoryFilter.vue';
+import {RouterView} from 'vue-router';
+
+</script>
+
 <template>
-    <CategoryFilter />
+    <nav> 
+        <NavBar />
+        <CategoryFilter />
+    </nav>
+    <main>
+        <Gallery />
+    </main>
+    <RouterView></RouterView>
 </template>
 
-<script setup>
-import CategoryFilter from './components/CategoryFilter.vue'; 
-</script>
+<style scoped>
+</style>
+
+
+
