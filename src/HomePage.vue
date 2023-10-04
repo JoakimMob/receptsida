@@ -1,7 +1,15 @@
 <script>
-import Gallery from './components/Gallery.vue';
-import NavBar from './components/NavBar.vue';
+import Gallery from '@/components/Gallery.vue';
+import NavBar from '@/components/NavBar.vue';
 import {RouterView} from 'vue-router';
+
+export default {
+    components: {
+        RouterView,
+        NavBar,
+        Gallery
+    }
+}
 
 </script>
 
