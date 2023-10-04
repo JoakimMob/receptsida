@@ -1,6 +1,7 @@
 <script setup>
 import Gallery from './components/Gallery.vue';
 import NavBar from './components/NavBar.vue';
+import {RouterView} from 'vue-router';
 
 </script>
 
@@ -11,8 +12,7 @@ import NavBar from './components/NavBar.vue';
     <main>
         <Gallery />
     </main>
-    
-   
+    <RouterView></RouterView>
 </template>
 
 <style scoped>
