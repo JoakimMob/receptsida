@@ -1,11 +1,23 @@
-<template> 
+<template>
     <div>
         <input class="search-box" v-model="innerSearchQuery" placeholder="Sök efter kategori...">
         <div class="gallery-list">
             <li class="card" v-for="recipe in filteredRecipes" :key="recipe._id">
                 <img :src="recipe.imageUrl">
-                <div>{{ recipe.title }}</div>
-                <span><i class="fa-regular fa-clock"></i> {{ recipe.timeInMins }} min</span>
+                <div class="card-info">
+                    <p>{{ recipe.title }}</p>
+                    <div class="time-ingredients">
+                        <span><i class="fa-regular fa-clock"></i> {{ recipe.timeInMins }} min
+                            {{ recipe.ingredients.length }} ingredienser</span>
+                        <div class="rating">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                    </div>
+                </div>
             </li>
         </div>
     </div>
@@ -29,8 +41,8 @@ onMounted(fetchRecipes);
 const filteredRecipes = computed(() => {
     if (!innerSearchQuery.value) return recipes.value;
 
-    return recipes.value.filter(recipe => 
-        recipe.categories.some(category => 
+    return recipes.value.filter(recipe =>
+        recipe.categories.some(category =>
             category.toLowerCase().includes(innerSearchQuery.value.toLowerCase())
         )
     );
@@ -42,33 +54,65 @@ const filteredRecipes = computed(() => {
     padding: 10px;
     border-radius: 5px;
     margin: 20px;
-    border: 1px solid #ccc; 
+    border: 1px solid #ccc;
     box-shadow: 0 0 4mm rgba(0, 0, 0, 0.15);
     outline: none;
 }
 
 .gallery-list {
-    padding: 100px;
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 100px;
 }
 
 .card {
+    display: flex;
     background-color: #fff;
+    height: 490px;
+    width: 300px;
     list-style-type: none;
-    border: 1px solid black;
-    min-width: 250px;
-    max-width: 350px;
-    max-height: 300px;
-    border-radius: 3px;
+    border-radius: 4px;
     text-align: center;
-    font-size: 1rem;
+    margin: 10px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    overflow: hidden;
 }
 
 .card img {
-    margin: 8px auto;
-    height: 220px;
-    width: 95%;
+    height: 320px;
+    width: 100%;
+    object-fit: cover;
+    transition: .5s;
+}
+
+.card img:hover {
+    cursor: pointer;
+}
+
+.card-info {
+    position: absolute;
+    margin-top: 350px;
+    border-radius: 3px;
+    font-weight: 600;
+    width: 300px;
+    padding: 5px;
+}
+
+.card-info p {
+    color: black;
+    font-size: 20px;
+    padding: 5px;
+    line-height: 1.2;
+}
+
+.time-ingredients {
+    width: 100%;
+    font-size: 12px;
+    color: black;
+}
+
+.rating {
+    font-size: 16px;
 }
 </style>
