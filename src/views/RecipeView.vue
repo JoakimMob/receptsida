@@ -1,7 +1,7 @@
 <template>
-    <div>
+        <h1>Recipe View</h1>
+
         <h1>{{RecipeName}}</h1>
-    </div>
 </template>
 
 <script>

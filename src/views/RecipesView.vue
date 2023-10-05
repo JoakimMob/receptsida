@@ -1,6 +1,6 @@
 <template>
-    <div>
-    </div>
+        <h1>Recipes View</h1>
+    
 </template>
 
 <script>

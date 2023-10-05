@@ -1,5 +1,10 @@
 <template>
-    <!-- <RouterLink to="/">Go to Home</RouterLink> -->
+    <router-link to="/">Home</router-link>
+    <br>
+    <router-link to="/recipe/:id">Recipe View</router-link>
+    <br>
+    <router-link to="/category/:id">Recipes View</router-link>
+
     <div>
         <h3>{{ message }}</h3>
         <i class="fa-solid fa-bars"></i>
@@ -27,8 +32,7 @@ export default {
             .catch(error => { console.error('An error occured: ',error);
         });
     },
-        components: { Categories }
-        // components: { Categories, RouterLink }
+        components: { Categories, RouterLink }
 }
 </script>
 
