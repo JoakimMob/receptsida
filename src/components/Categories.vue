@@ -1,13 +1,14 @@
 <template>
-    <div>
-        {{ name }}
+    <div :id=name class="categories">
+        {{ name }} ({{ count }})
     </div>
 </template>
 
 <script>
     export default {
         props: {
-            name: String
+            name: String,
+            count: Number
         }
     }
 </script>

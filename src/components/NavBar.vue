@@ -1,15 +1,19 @@
 <template>
-    <router-link to="/">Home</router-link>
+    <header>
+         <router-link to="/">Home</router-link>
     <br>
     <router-link to="/recipe/:id">Recipe View</router-link>
     <br>
     <router-link to="/category/:id">Recipes View</router-link>
-
+    </header>
     <div>
         <h3>{{ message }}</h3>
-        <i class="fa-solid fa-bars"></i>
         <ul>
-            <li v-for="item in apiData" :key="item.id"><Categories :name="item.name"/></li>
+            <li v-for="item in apiData" :key="item.id">
+                <RouterLink :to="`/categories/${item.name}`" @click="makeBold(item.name)">
+                <Categories :name="item.name" :count="item.count"/>
+                </RouterLink>
+            </li>
         </ul>
     </div>
 </template>
@@ -23,6 +27,7 @@ export default {
         return {
             message: 'menyrackare',
             apiData: [],
+            categories: document.getElementsByClassName("categories")
         };
     },
     created() {
@@ -31,6 +36,15 @@ export default {
             .then(data => {this.apiData = data; })
             .catch(error => { console.error('An error occured: ',error);
         });
+    },
+    methods: {
+        makeBold(selectedCategory) {
+            for (const element of this.categories) {
+                element.classList.remove("bolded")
+            }
+            let currentCategory = document.getElementById(selectedCategory)
+            currentCategory.classList.add("bolded")
+        }
     },
         components: { Categories, RouterLink }
 }
