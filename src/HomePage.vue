@@ -16,12 +16,11 @@ export default {
 <template>
     <nav> 
         <NavBar />
-        
     </nav>
     <main>
         <CategoryFilter />
     </main>
-    <RouterView></RouterView>
+    <!-- <RouterView></RouterView> -->
 </template>
 
 <style scoped>
