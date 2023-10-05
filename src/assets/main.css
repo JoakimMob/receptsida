@@ -11,3 +11,7 @@ body {
   background-color: #c0c7bd;
   color: rgb(64, 61, 61);
 }
+
+.bolded {
+  font-weight: bold;
+}
