@@ -51,9 +51,10 @@ const filteredRecipes = computed(() => {
 
 <style scoped>
 .search-box {
-    padding: 10px;
-    border-radius: 5px;
-    margin: 20px;
+    margin-left: 500px;
+    width: 800px;
+    padding: 15px;
+    border-radius: 25px;
     border: 1px solid #ccc;
     box-shadow: 0 0 4mm rgba(0, 0, 0, 0.15);
     outline: none;
@@ -75,7 +76,7 @@ const filteredRecipes = computed(() => {
     border-radius: 4px;
     text-align: center;
     margin: 10px;
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 3px 8px;
     overflow: hidden;
 }
 
