@@ -51,8 +51,9 @@ const filteredRecipes = computed(() => {
 
 <style scoped>
 .search-box {
-    margin-left: 500px;
-    width: 800px;
+    display: block;
+    margin: auto;
+    width: 50%;
     padding: 15px;
     border-radius: 25px;
     border: 1px solid #ccc;
