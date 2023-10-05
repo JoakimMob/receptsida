@@ -1,7 +1,15 @@
-<script setup>
-import Gallery from './components/Gallery.vue';
-import NavBar from './components/NavBar.vue';
+<script>
+import NavBar from '@/components/NavBar.vue';
+import CategoryFilter from '@/components/CategoryFilter.vue';
 import {RouterView} from 'vue-router';
+
+export default {
+    components: {
+        RouterView,
+        NavBar,
+        CategoryFilter
+    }
+}
 
 </script>
 
@@ -10,10 +18,13 @@ import {RouterView} from 'vue-router';
         <NavBar />
     </nav>
     <main>
-        <Gallery />
+        <CategoryFilter />
     </main>
-    <RouterView></RouterView>
+    <!-- <RouterView></RouterView> -->
 </template>
 
 <style scoped>
 </style>
+
+
+

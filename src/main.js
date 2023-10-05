@@ -1,11 +1,12 @@
-import './assets/main.css'
+import './assets/main.css';
 
-import { createApp } from 'vue'
-import HomePage from './HomePage.vue'
+import { createApp } from 'vue';
+import HomePage from '@/HomePage.vue';
+import router from '@/router';
 
 
 
-const app = createApp(HomePage) 
+const app = createApp(HomePage);
 
-// app.use()
-app.mount('#app')
+app.use(router);
+app.mount('#app');
