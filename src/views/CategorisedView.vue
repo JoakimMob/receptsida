@@ -1,5 +1,5 @@
 <template>
-        <h1 class="CategoryTitle">Recipes View</h1>
+        <h1 class="CategoryTitle">Categorised View</h1>
     
 </template>
 

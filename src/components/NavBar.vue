@@ -2,12 +2,11 @@
     <header>
     <router-link to="/">Home</router-link>
     <br>
-    <router-link to="/recipe/:id">Recipe View</router-link>
+    <router-link to="/recipe/">Recipe View</router-link>
     <br>
-    <router-link to="/category/:id">Recipes View</router-link>
+    <router-link to="/category/">Recipes View</router-link>
     </header>
     <div>
-        <h3>{{ message }}</h3>
         <ul>
             <li v-for="item in apiData" :key="item.id">
                 <RouterLink :to="`/categories/${item.name}`" @click="makeBold(item.name)">
@@ -25,7 +24,6 @@ import Categories from './Categories.vue';
 export default {
     data() {
         return {
-            message: 'menyrackare',
             apiData: [],
             categories: document.getElementsByClassName("categories")
         };
