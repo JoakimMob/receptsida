@@ -1,6 +1,6 @@
 <template>
     <header>
-         <router-link to="/">Home</router-link>
+    <router-link to="/">Home</router-link>
     <br>
     <router-link to="/recipe/:id">Recipe View</router-link>
     <br>
