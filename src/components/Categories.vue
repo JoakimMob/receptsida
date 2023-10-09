@@ -8,7 +8,8 @@
     export default {
         props: {
             name: String,
-            count: Number
+            count: Number,
+            isActive: Boolean
         }
     }
 </script>
