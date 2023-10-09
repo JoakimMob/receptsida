@@ -2,9 +2,7 @@
     <header>
     <router-link to="/">Home</router-link>
     <br>
-    <router-link to="/recipe/">Recipe View</router-link>
-    <br>
-    <router-link to="/category/">Recipes View</router-link>
+    <router-link to="/category/:name">Recipes View</router-link>
     </header>
     <div>
         <ul>
