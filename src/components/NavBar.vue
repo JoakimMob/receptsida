@@ -7,7 +7,7 @@
     <div>
         <ul>
             <li v-for="item in apiData" :key="item.id">
-                <RouterLink :to="`/categories/${item.name}`" @click="makeBold(item.name)">
+                <RouterLink :to="`/category/:${item.name}`" @click="makeBold(item.name)">
                 <Categories :name="item.name" :count="item.count"/>
                 </RouterLink>
             </li>
