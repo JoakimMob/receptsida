@@ -51,8 +51,9 @@ export default {
         };
     },
     async created() {
+
         try {
-            const response = await fetch('https://jau22-recept-grupp5-1bixsi9xz341.reky.se/recipes/6519cc5499612c970cb407fc'); // Byt ut URL:en med den önskade receptets URL
+            const response = await fetch(`https://jau22-recept-grupp5-1bixsi9xz341.reky.se/recipes/${this.$route.params.id}`); 
             if (!response.ok) {
                 throw new Error('Något gick fel vid hämtning av recept.');
             }
