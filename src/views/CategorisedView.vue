@@ -2,15 +2,15 @@
 export default {
         data() {
                 return {
-                        category: [],
+                        recipes: [],
                         categoryName: "",
                 }
         },
         methods: {
                 async fetchData() {
-                        this.category = '';
+                        this.recipes = '';
                         const response = await fetch(`https://jau22-recept-grupp5-1bixsi9xz341.reky.se/categories/${this.$route.params.categoryName}/recipes`)
-                        this.category = await response.json();
+                        this.recipes = await response.json();
                 }
         },
         created() {
@@ -30,7 +30,7 @@ export default {
 </script>
     
 <template>
-        <div class="gallery-list" v-for="recipe in category">
+        <div class="gallery-list" v-for="recipe in recipes">
                 <router-link :to="'/recipe/' + recipe._id">
                         <li class="card">
                                 <img :src="recipe.imageUrl">
