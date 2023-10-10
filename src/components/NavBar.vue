@@ -57,6 +57,18 @@ export default {
 h3 {
     color: blue
 }
+ul {
+    padding: 70px 50px;
+    background-color: #9bb979;
+    color: white;
+    position: absolute;
+    top: 0;
+    left: -300px;
+    width: 200px;
+    height: 100vh;
+    z-index: 1; 
+    left: 0;
+}
 </style>
 
 
