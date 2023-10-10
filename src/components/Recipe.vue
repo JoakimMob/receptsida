@@ -30,14 +30,6 @@ export default {
 </script>
 
 <style scoped>
-.gallery-list {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    margin: 20px auto;
-    width: 80%;
-}
-
 .card {
     display: flex;
     background-color: #fff;
@@ -55,7 +47,6 @@ export default {
     height: 320px;
     width: 100%;
     object-fit: cover;
-    transition: .5s;
 }
 
 .card img:hover {
