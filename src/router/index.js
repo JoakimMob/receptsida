@@ -16,7 +16,7 @@ const router = createRouter({
             component: RecipeView
         },
         {
-            path: '/category/:name',
+            path: '/category/:categoryName',
             name: 'category',
             component: CategorisedView
         }
