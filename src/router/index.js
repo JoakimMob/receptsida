@@ -11,11 +11,13 @@ const router = createRouter({
             component: HomeView
         },
         {
-            path: '/recipe/',
+            path: '/recipe/:id',
+            name: 'recipe',
             component: RecipeView
         },
         {
-            path: '/category/',
+            path: '/category/:categoryName',
+            name: 'category',
             component: CategorisedView
         }
     ]

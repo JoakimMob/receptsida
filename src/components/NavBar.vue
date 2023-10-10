@@ -1,17 +1,14 @@
 <template>
-    <header>
-    <router-link to="/">Home</router-link>
-    <br>
-    <router-link to="/recipe/">Recipe View</router-link>
-    <br>
-    <router-link to="/category/">Recipes View</router-link>
-    </header>
     <div>
         <ul>
+            
+            <router-link to="/">Home</router-link>
+
+
             <li v-for="item in apiData" :key="item.id">
-                <RouterLink :to="`/categories/${item.name}`" @click="makeBold(item.name)">
-                <Categories :name="item.name" :count="item.count"/>
-                </RouterLink>
+                <router-link :to="`/category/${item.name}`" @click="makeBold(item.name)">
+                    <Categories :name="item.name" :count="item.count" />
+                </router-link>
             </li>
         </ul>
     </div>
@@ -31,9 +28,10 @@ export default {
     created() {
         fetch('https://jau22-recept-grupp5-1bixsi9xz341.reky.se/categories')
             .then(response => response.json())
-            .then(data => {this.apiData = data; })
-            .catch(error => { console.error('An error occured: ',error);
-        });
+            .then(data => { this.apiData = data; })
+            .catch(error => {
+                console.error('An error occured: ', error);
+            });
     },
     methods: {
         makeBold(selectedCategory) {
@@ -44,7 +42,7 @@ export default {
             currentCategory.classList.add("bolded")
         }
     },
-        components: { Categories, RouterLink }
+    components: { Categories, RouterLink }
 }
 </script>
 
