@@ -34,10 +34,19 @@
             </ol>
         </div>
     </div>
+    <CommentForm/>
+    <CommentList/>
 </template>
   
 <script>
+import CommentList from '../components/CommentList.vue'
+import CommentForm from '../components/CommentForm.vue'
+
 export default {
+    components: {
+        CommentList,
+        CommentForm
+    },
     data() {
         return {
             recipe: {
