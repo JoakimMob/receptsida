@@ -74,6 +74,7 @@ export default {
     font-family: Arial, sans-serif;
     background-color: #f5f5f5;
     border-radius: 10px;
+    border: 1px solid #ccc;
 }
 
 .RecipeHeader {

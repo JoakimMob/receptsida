@@ -1,0 +1,75 @@
+<script>
+export default {
+    data() {
+        return {
+            header: 'The Italian Stallions'
+        }
+    }
+}
+</script>
+
+<template>
+    <div class="header-wrapper">
+        <h1>{{ header }}</h1>
+    </div>
+</template>
+
+<style>
+.header-wrapper {
+    background-color: #b2c7a9;
+    margin-bottom: 20px;
+    height: 350px;
+    width: 100%;
+    overflow: hidden;
+}
+
+.header-wrapper img {
+    display: block;
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 300px;
+    height: 300px;
+}
+
+.header-wrapper h1 {
+    font-family: 'Dancing Script', cursive;
+    font-size: 100px;
+    text-align: center;
+    color: #f5f5f5;
+    margin-top: 110px;
+}
+
+@media screen and (max-width: 768px) {
+    .header-wrapper {
+        height: 200px;
+    }
+
+    .header-wrapper img {
+        width: 200px;
+        height: 200px;
+    }
+
+    .header-wrapper h1 {
+        font-size: 50px;
+        margin-top: 50px;
+    }
+}
+
+
+@media screen and (max-width: 425px) {
+    .header-wrapper {
+        height: 150px;
+    }
+
+    .header-wrapper img {
+        width: 150px;
+        height: 150px;
+    }
+
+    .header-wrapper h1 {
+        font-size: 30px;
+        margin-top: 50px;
+    }
+}
+</style>

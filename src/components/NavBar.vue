@@ -65,7 +65,7 @@ h3 {
 }
 ul {
     padding: 70px 50px;
-    background-color: #9bb979;
+    /* background-color: #9bb979; */
     color: white;
     position: absolute;
     top: 0;
