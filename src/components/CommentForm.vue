@@ -1,4 +1,5 @@
 <template>
+    <h2>Kommentarer</h2>
     <div class="comment-form">
         <div v-if="!successMessage.value">
             <input class="name-input" v-model="name" placeholder="Ditt namn" :disabled="isLoading" />
@@ -58,6 +59,10 @@ Content-Type: application/json */
 </script>
 
 <style scoped>
+
+h2{
+    text-align: center;
+}
 .comment-form {
     display: flex;
     flex-direction: column;
