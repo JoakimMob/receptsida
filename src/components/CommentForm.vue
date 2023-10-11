@@ -42,10 +42,6 @@ const submitComment = async () => {
         headers: { 'Content-Type': 'application/json' },
     });
 
-    /*# Lägger till en kommentar för ett recept
-POST {{baseUrl}}/recipes/632da30c6e7766b37d983811/comments
-Content-Type: application/json */
-
     isLoading.value = false;
 
     // If successful response setting 
@@ -63,6 +59,7 @@ Content-Type: application/json */
 h2{
     text-align: center;
 }
+
 .comment-form {
     display: flex;
     flex-direction: column;
@@ -109,5 +106,4 @@ button:disabled {
     cursor: not-allowed;
 }
 </style>
-
 
