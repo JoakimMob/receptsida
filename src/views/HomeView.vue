@@ -47,7 +47,7 @@ const filteredRecipes = computed(() => {
     flex-wrap: wrap;
     justify-content: center;
     margin: 20px auto;
-    width: 80%;
+    width: 50%;
 }
 
 </style>
