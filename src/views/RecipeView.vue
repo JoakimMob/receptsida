@@ -39,8 +39,8 @@
 </template>
   
 <script>
-import CommentList from '../components/CommentList.vue'
-import CommentForm from '../components/CommentForm.vue'
+import CommentList from '@/components/CommentList.vue';
+import CommentForm from '@/components/CommentForm.vue';
 
 export default {
     components: {

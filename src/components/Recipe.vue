@@ -32,6 +32,7 @@ export default {
 <style scoped>
 .card {
     display: flex;
+    flex-wrap: wrap;
     background-color: #fff;
     height: 490px;
     width: 300px;
@@ -54,16 +55,15 @@ export default {
 }
 
 .card-info {
-    position: absolute;
-    margin-top: 350px;
     border-radius: 3px;
     font-weight: 600;
     width: 300px;
     padding: 5px;
 }
 
+
 .card-info p {
-    color: black;
+    color: #535e5e;
     font-size: 20px;
     padding: 5px;
     line-height: 1.2;
@@ -72,10 +72,10 @@ export default {
 .time-ingredients {
     width: 100%;
     font-size: 12px;
-    color: black;
+    color: #535e5e;
 }
 
 .rating {
     font-size: 16px;
-}
+} 
 </style>

@@ -5,11 +5,13 @@
 }
 
 body {
+  width: 100%;
   font-family: sans-serif;
   font-size: 15px;
   line-height: 1.6;
-  background-color: #c0c7bd;
-  color: rgb(64, 61, 61);
+  background-color: #f5f5f5;
+  /* background-color: #b2c7a9; */
+  color: #535e5e;
 }
 
 .bolded {

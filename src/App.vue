@@ -1,11 +1,13 @@
 <script>
 import NavBar from '@/components/NavBar.vue';
 import { RouterView } from 'vue-router';
+import Header from '@/components/Header.vue';
 
 export default {
     components: {
         RouterView,
-        NavBar
+        NavBar,
+        Header,
     }
 }
 
@@ -13,6 +15,7 @@ export default {
 
 <template>
     <nav>
+        <Header />
         <NavBar />
     </nav>
     <RouterView></RouterView>

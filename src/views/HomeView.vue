@@ -49,5 +49,9 @@ const filteredRecipes = computed(() => {
     margin: 20px auto;
     width: 80%;
 }
+.gallery-list a {
+        text-decoration: none;
+}
+
 
 </style>
