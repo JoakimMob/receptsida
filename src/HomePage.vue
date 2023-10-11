@@ -2,12 +2,16 @@
 import NavBar from '@/components/NavBar.vue';
 import CategoryFilter from '@/components/CategoryFilter.vue';
 import {RouterView} from 'vue-router';
+import CommentForm from '@/components/CommentForm.vue';
+import CommentList from '@/components/CommentList.vue';
 
 export default {
     components: {
         RouterView,
         NavBar,
-        CategoryFilter
+        CategoryFilter,
+        CommentForm,       
+        CommentList 
     }
 }
 
@@ -19,6 +23,8 @@ export default {
     </nav>
     <main>
         <CategoryFilter />
+        <CommentForm />
+        <CommentList />
     </main>
     <!-- <RouterView></RouterView> -->
 </template>

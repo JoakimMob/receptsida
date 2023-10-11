@@ -1,6 +1,7 @@
 <template>
     <div>
-        <input class="search-box" v-model="innerSearchQuery" placeholder="Sök efter kategori...">
+        <input class="search-box" v-model="innerSearchQuery" placeholder="Sök efter recept...">
+        
         <div class="gallery-list">
             <li class="card" v-for="recipe in filteredRecipes" :key="recipe._id">
                 <img :src="recipe.imageUrl">
@@ -26,6 +27,7 @@
 <script setup>
 import { ref, computed, onMounted } from 'vue';
 
+
 const innerSearchQuery = ref(''); // Reactive var for user input
 const recipes = ref([]); // Initializing the var to hold the list of all recipes fetched from the server
 
@@ -37,14 +39,13 @@ const fetchRecipes = async () => {
 
 onMounted(fetchRecipes);
 
-// If a search query present filtering the recipes based on the user's input
+// Filter based on the recipe title
+
 const filteredRecipes = computed(() => {
     if (!innerSearchQuery.value) return recipes.value;
 
-    return recipes.value.filter(recipe =>
-        recipe.categories.some(category =>
-            category.toLowerCase().includes(innerSearchQuery.value.toLowerCase())
-        )
+    return recipes.value.filter(recipe => 
+        recipe.title.toLowerCase().includes(innerSearchQuery.value.toLowerCase())
     );
 });
 </script>
