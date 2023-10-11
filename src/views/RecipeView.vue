@@ -39,8 +39,8 @@
 </template>
   
 <script>
-import CommentList from '../components/CommentList.vue'
-import CommentForm from '../components/CommentForm.vue'
+import CommentList from '@/components/CommentList.vue';
+import CommentForm from '@/components/CommentForm.vue';
 
 export default {
     components: {
@@ -83,7 +83,6 @@ export default {
     font-family: Arial, sans-serif;
     background-color: #f5f5f5;
     border-radius: 10px;
-    border: 1px solid #ccc;
 }
 
 .RecipeHeader {

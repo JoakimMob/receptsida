@@ -7,7 +7,7 @@ export default {
     components: {
         RouterView,
         NavBar,
-        Header
+        Header,
     }
 }
 
