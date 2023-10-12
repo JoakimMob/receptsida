@@ -56,6 +56,13 @@ export default {
     margin-top: 110px;
 }
 
+@media screen and (max-width: 1280px) {
+    
+    #logo {
+        display: none;}
+}
+    
+
 @media screen and (max-width: 768px) {
     .header-wrapper {
         height: 200px;
