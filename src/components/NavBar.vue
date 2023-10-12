@@ -177,6 +177,25 @@ export default {
     opacity: 1;
 }
 
+@media screen and (max-width: 1460px) {
+  .sidebar {
+    width: 100%;
+    height: auto;
+    position: relative;
+    margin-bottom: 20px;
+  }
+  .sidebar a {float: left;}
+  div.content {margin-left: 0;}
+}
+
+/* On screens that are less than 400px, display the bar vertically, instead of horizontally */
+@media screen and (max-width: 400px) {
+  .sidebar a {
+    text-align: center;
+    float: none;
+  }
+}
+
 .bolded {
     margin-left: -8px;
     padding: 0 8px 0 8px;
