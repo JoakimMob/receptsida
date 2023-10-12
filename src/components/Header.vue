@@ -24,6 +24,11 @@ export default {
     overflow: hidden;
     position: relative;
 }
+@media screen and (max-width: 1460px) {
+    .header-wrapper{
+        margin-bottom: 0px;
+    }
+}
 
 .header-wrapper img {
     display: block;
