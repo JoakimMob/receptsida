@@ -11,6 +11,7 @@ export default {
 <template>
     <div class="header-wrapper">
         <h1>{{ header }}</h1>
+        <img id="logo" src="../assets/kock-färg.png" alt="logo"/>
     </div>
 </template>
 
@@ -21,6 +22,7 @@ export default {
     height: 350px;
     width: 100%;
     overflow: hidden;
+    position: relative;
 }
 
 .header-wrapper img {
@@ -30,6 +32,15 @@ export default {
     margin-right: auto;
     width: 300px;
     height: 300px;
+}
+
+#logo{
+    position: absolute;
+    top: 40px;
+    right: 40px;
+    height: 16rem;
+    width: 16rem;
+    margin-top: -15px;
 }
 
 .header-wrapper h1 {

@@ -2,7 +2,7 @@
     <div class="sidebar close">
         <div class="logo-details">
             <span id=icon class="material-symbols-outlined">dinner_dining</span>
-            <span class="logo_name">Italian cuisine</span>
+            <span class="logo_name"></span>
         </div>
         
         <ul class="nav-links">  
