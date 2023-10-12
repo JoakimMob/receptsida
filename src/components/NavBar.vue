@@ -184,21 +184,39 @@ export default {
     position: relative;
     margin-bottom: 20px;
   }
-  .sidebar a {float: left;}
+
+  .sidebar a {
+    float: none;
+    text-align: center;
+}
   div.content {margin-left: 0;}
+
+  .sidebar .nav-links {
+    padding-top: 0;
+  }
+
+  .sidebar .logo-details {
+    height: 0;
+    padding: 5px;
+  }
+
+  #icon {
+    display: none;
+  }
 }
 
 /* On screens that are less than 400px, display the bar vertically, instead of horizontally */
-@media screen and (max-width: 400px) {
+
+ /* @media screen and (max-width: 400px) { 
   .sidebar a {
     text-align: center;
     float: none;
   }
-}
+} */
 
 .bolded {
     margin-left: -8px;
-    padding: 0 8px 0 8px;
+    padding: 0 8px 0 8px; 
     /* border: 1px solid white; */
     border-radius: 8px;
     background: rgba(94, 93, 93, 0.664);
