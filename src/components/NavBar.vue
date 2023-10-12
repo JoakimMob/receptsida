@@ -14,16 +14,18 @@
             </li>
 
             <li>
-                <div class="icon-link">
+                <div class="icon-link" @click="toggleMenu">
                     <a href="#">
                         <i class='bx bx-category'></i>
                         <span class="link_name">Kategorier</span>
+                        <i class='bx bx-chevron-down'></i>
                     </a>
                 </div>
-                <ul class="sub-menu">
+                <ul class="sub-menu" :class="{'show-sub-menu': showSubMenu}">
                     <li v-for="item in apiData" :key="item.id">
                         <router-link :to="`/category/${item.name}`" @click="makeBold(item.name)">
                             <Categories :name="item.name" :count="item.count" />
+                            <span :class="getCategoryClass(item.name)"></span>
                         </router-link>
                     </li>
                 </ul>
@@ -40,7 +42,9 @@ export default {
     data() {
         return {
             apiData: [],
-            categories: document.getElementsByClassName("categories")
+            categories: document.getElementsByClassName("categories"),
+            showSubMenu: false,
+            activeCategory: null,
         };
     },
     created() {
@@ -58,7 +62,17 @@ export default {
             }
             let currentCategory = document.getElementById(selectedCategory)
             currentCategory.classList.add("bolded")
+        },
+        toggleMenu() {
+            this.showSubMenu = !this.showSubMenu;
         }
+    },
+    computed: {
+        getCategoryClass(){
+            return (itemName) => ({
+                bolded: this.activeCategory === itemName,
+            });
+        },
     },
     components: { Categories, RouterLink }
 }
@@ -140,9 +154,14 @@ export default {
 }
 
 .sidebar .nav-links li .sub-menu {
+    display: none;
     padding: 6px 6px 14px 80px;
     margin-top: -10px;
     background-color: #1d1b31;
+}
+
+.sidebar .nav-links li .sub-menu.show-sub-menu {
+    display: block; 
 }
 
 .sidebar .nav-links li .sub-menu a {
@@ -157,6 +176,15 @@ export default {
 .sidebar .nav-links li .sub-menu a:hover {
     opacity: 1;
 }
+
+.bolded {
+    margin-left: -8px;
+    padding: 0 8px 0 8px;
+    /* border: 1px solid white; */
+    border-radius: 8px;
+    background: rgba(94, 93, 93, 0.664);
+}
+
 
 /* .sidebar.close .nav-links li .sub-menu{
     position: absolute;
