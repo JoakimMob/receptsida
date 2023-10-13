@@ -57,6 +57,7 @@ const submitComment = async () => {
 <style scoped>
 
 h2{
+    margin-top: 40px;
     text-align: center;
 }
 

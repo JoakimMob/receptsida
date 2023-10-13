@@ -4,17 +4,13 @@
             <img :src="recipe.imageUrl">
             <div class="card-info">
                 <p>{{ recipe.title }}</p>
+                <div class="rating">
+                   <span>Betyg {{ recipe.avgRating }} / 5</span>
+                </div>
                 <div class="time-ingredients">
                     <span>
                         <i class="fa-regular fa-clock"></i> {{ recipe.timeInMins }} min
                         {{ recipe.ingredients.length }} ingredienser</span>
-                    <div class="rating">
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                    </div>
                 </div>
             </div>
         </li>

@@ -18,11 +18,10 @@
                 <h2>Ingredienser:</h2>
                 <ul>
                     <li v-for="ingredient in recipe.ingredients" :key="ingredient.name">
-                        <span class="ListAmount">{{ ingredient.amount }}  </span>
+                        <span class="ListAmount">{{ ingredient.amount }} </span>
                         <span class="ListUnit">{{ ingredient.unit }}</span>
                         <span>{{ ingredient.name }}</span>
                     </li>
-
                 </ul>
             </div>
         </div>
@@ -33,19 +32,25 @@
                 <li v-for="(step, index) in recipe.instructions" :key="index">{{ step }}</li>
             </ol>
         </div>
+
+        <Rating v-model="recipe.rating" :class="rating - wrapper" /> <!-- Rating component -->
+        <p style="text-align: center;">Betyg: {{ recipe.avgRating }}</p>
+
+        <CommentForm />
+        <CommentList />
     </div>
-    <CommentForm/>
-    <CommentList/>
 </template>
   
 <script>
 import CommentList from '@/components/CommentList.vue';
 import CommentForm from '@/components/CommentForm.vue';
+import Rating from '../components/Rating.vue';
 
 export default {
     components: {
         CommentList,
-        CommentForm
+        CommentForm,
+        Rating
     },
     data() {
         return {
@@ -169,6 +174,7 @@ export default {
     color: #333;
     margin-bottom: 5px;
 }
+
 .ListAmount {
     font-weight: bold;
     margin-right: 1px;
