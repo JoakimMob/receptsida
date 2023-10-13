@@ -11,18 +11,18 @@
         </div>
 
         <div class="RecipeDetails">
-            <div class="RecipeImage">
-                <img :src="recipe.imageUrl" alt="Receptbild">
-            </div>
             <div class="RecipeInfo">
                 <h2>Ingredienser:</h2>
                 <ul>
                     <li v-for="ingredient in recipe.ingredients" :key="ingredient.name">
-                        <span class="ListAmount">{{ ingredient.amount }} </span>
+                        <span class="ListAmount">{{ ingredient.amount }}  </span>
                         <span class="ListUnit">{{ ingredient.unit }}</span>
                         <span>{{ ingredient.name }}</span>
                     </li>
                 </ul>
+            </div>
+            <div class="RecipeImage">
+                <img :src="recipe.imageUrl" alt="Receptbild">
             </div>
         </div>
 
@@ -44,13 +44,13 @@
 <script>
 import CommentList from '@/components/CommentList.vue';
 import CommentForm from '@/components/CommentForm.vue';
-import Rating from '../components/Rating.vue';
+import Rating from '@/components/Rating.vue';
 
 export default {
     components: {
         CommentList,
         CommentForm,
-        Rating
+        Rating,
     },
     data() {
         return {
@@ -81,125 +81,137 @@ export default {
 </script>
   
 <style scoped>
-.RecipePage {
-    max-width: 800px;
-    margin: 0 auto 100px;
-    padding: 20px;
-    font-family: Arial, sans-serif;
-    background-color: #f5f5f5;
-    border-radius: 10px;
-}
+    .RecipePage {
+        max-width: 800px;
+        margin: 0 auto 100px;
+        padding: 20px;
+        font-family: Arial, sans-serif;
+        background-color: #f5f5f5;
+        border-radius: 10px;
+    }
 
-.RecipeHeader {
-    text-align: center;
-    margin: 20px;
-}
+    .RecipeHeader {
+        text-align: center;
+        margin: 20px;
+    }
 
-.RecipeHeader h1 {
-    font-size: 28px;
-    color: #333;
-    margin-bottom: 10px;
-}
+    .RecipeHeader h1 {
+        font-size: 28px;
+        color: #333;
+        margin-bottom: 10px;
+    }
 
-.RecipeHeader p {
-    font-size: 18px;
-    color: #666;
-    margin-bottom: 20px;
-}
+    .RecipeHeader p {
+        font-size: 18px;
+        color: #666;
+        margin-bottom: 20px;
+    }
 
-.MiniInfo {
-    display: inline-block;
-    background-color: #c0c7bd67;
-    border-radius: 10px;
-}
+    .MiniInfo {
+        display: inline-block;
+        background-color: #c0c7bd67;
+        border-radius: 10px;
+    }
 
-#TimeInMins {
-    font-size: larger;
-    display: inline-block;
-    padding: 10px;
-    font-weight: bold;
+    #TimeInMins {
+        font-size: larger;
+        display: inline-block;
+        padding: 10px;
+        font-weight: bold;
+    }
 
-}
+    #NumberOfIngredients {
+        font-size: larger;
+        display: inline-block;
+        padding: 10px;
+        font-weight: bold;
+    }
 
-#NumberOfIngredients {
-    font-size: larger;
-    display: inline-block;
-    padding: 10px;
-    font-weight: bold;
-}
+    .RecipeDetails {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 20px;
+    }
 
-.RecipeDetails {
-    display: flex;
-    flex-direction: row-reverse;
-    align-items: center;
-    margin-bottom: 20px;
-}
+    .RecipeInfo {
+        width: 45%; /* Adjust the width as needed */
+    }
 
-.RecipeImage img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 10px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-    margin-top: 50px;
-}
+    .RecipeInfo h2 {
+        font-size: 24px;
+        color: #333;
+        margin-top: 45px;
+    }
 
-.RecipeInfo {
-    margin-right: 20px;
-}
+    .RecipeInfo ul {
+        list-style-type: none;
+        padding: 0;
+    }
 
-.RecipeInfo span {
-    font-size: 16px;
-    color: #666;
-}
+    .RecipeInfo ul li {
+        font-size: 16px;
+        color: #333;
+        margin-bottom: 5px;
+    }
 
-.RecipeInfo div {
-    font-size: 16px;
-    color: #666;
-    margin-top: 5px;
-}
+    .RecipeInfo .ListAmount {
+        font-weight: bold;
+        margin-right: 1px;
+    }
 
-.RecipeInfo h2 {
-    font-size: 24px;
-    color: #333;
-    margin-top: 15px;
-}
+    .RecipeInfo .ListUnit {
+        font-weight: bold;
+        margin-right: 10px;
+    }
 
-.RecipeInfo ul {
-    list-style-type: none;
-    padding: 0;
-}
+    .RecipeImage img {
+        width: 500px;
+        height: auto;
+        border-radius: 10px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        margin-top: 50px;
+        margin-left: 50px;
+    }
 
-.RecipeInfo ul li {
-    font-size: 16px;
-    color: #333;
-    margin-bottom: 5px;
-}
+    @media screen and (max-width: 720px) {
+        .RecipeDetails {
+            flex-direction: column;
+        }
 
-.ListAmount {
-    font-weight: bold;
-    margin-right: 1px;
-}
+        .RecipeInfo {
+            width: 100%;
+        }
 
-.ListUnit {
-    font-weight: bold;
-    margin-right: 10px;
-}
+        .RecipeImage img {
+            margin-left: 0;
+            width: 500px;
+        }
+    }
 
-.RecipeInstructions h2 {
-    font-size: 24px;
-    color: #333;
-    margin-top: 20px;
-}
+    @media screen and (max-width: 540px) {
+        .RecipeImage img {
+            width: 100%;
+        }
+    }
+        
+    
+        
+    
+    .RecipeInstructions h2 {
+        font-size: 24px;
+        color: #333;
+        margin-top: 20px;
+    }
 
-.RecipeInstructions ol {
-    list-style-type: decimal;
-    margin-left: 20px;
-    padding: 0;
-}
+    .RecipeInstructions ol {
+        list-style-type: decimal;
+        margin-left: 20px;
+        padding: 0;
+    }
 
-.RecipeInstructions ol li {
-    font-size: 16px;
-    color: #333;
-    margin-bottom: 10px;
-}
+    .RecipeInstructions ol li {
+        font-size: 16px;
+        color: #333;
+        margin-bottom: 10px;
+    }
 </style>
