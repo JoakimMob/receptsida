@@ -11,7 +11,7 @@ export default {
 <template>
     <div class="header-wrapper">
         <h1>{{ header }}</h1>
-        <img id="logo" src="../assets/kock-färg.png" alt="logo"/>
+        <img id="logo" src="../assets/kock-färg.png" alt="logo" />
     </div>
 </template>
 
@@ -24,8 +24,9 @@ export default {
     overflow: hidden;
     position: relative;
 }
+
 @media screen and (max-width: 1460px) {
-    .header-wrapper{
+    .header-wrapper {
         margin-bottom: 0px;
     }
 }
@@ -39,7 +40,7 @@ export default {
     height: 300px;
 }
 
-#logo{
+#logo {
     position: absolute;
     top: 40px;
     right: 40px;
@@ -57,19 +58,15 @@ export default {
 }
 
 @media screen and (max-width: 1280px) {
-    
+
     #logo {
-        display: none;}
+        display: none;
+    }
 }
-    
+
 
 @media screen and (max-width: 768px) {
     .header-wrapper {
-        height: 200px;
-    }
-
-    .header-wrapper img {
-        width: 200px;
         height: 200px;
     }
 
@@ -85,14 +82,8 @@ export default {
         height: 150px;
     }
 
-    .header-wrapper img {
-        width: 150px;
-        height: 150px;
-    }
-
     .header-wrapper h1 {
         font-size: 30px;
         margin-top: 50px;
     }
-}
-</style>
+}</style>

@@ -33,7 +33,7 @@
             </ol>
         </div>
 
-        <Rating v-model="recipe.rating" :class="rating - wrapper" /> <!-- Rating component -->
+        <Rating v-model="recipe.rating" />  <!-- Rating component -->
         <p style="text-align: center;">Betyg: {{ recipe.avgRating }}</p>
 
         <CommentForm />

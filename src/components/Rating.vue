@@ -1,12 +1,12 @@
 <template>
     <div class="rating-wrapper">
-        <p v-if="!ratingSent">Vad tyckte du om receptet?</p>
-        <ul v-if="!ratingSent">
-            <li v-for="index in 5" :key="index" :class="{ 'selected': index <= rating }" @click="setRating(index)">
+        <p v-if="!ratingSent">Vad tyckte du om receptet?</p> <!--- This message will appear when the user has not rated the recipe -->
+        <ul v-if="!ratingSent"> 
+            <li v-for="index in 5" :key="index" :class="{ 'selected': index <= rating }" @click="setRating(index)"> 
                 &#9733;
             </li>
         </ul>
-        <p v-else class="thanks-msg">Tack för ditt betyg!</p>
+        <p v-else class="thanks-msg">Tack för ditt betyg!</p>   <!--- This message will appear when the user has rated the recipe -->
     </div>
 </template>
   
@@ -15,34 +15,35 @@ export default {
     props: {
         value: {
             type: Number,
-            default: 0,
+            default: 0,   // Default value if no rating is set
         },
     },
     data() {
         return {
-            rating: this.value,
-            ratingSent: false,
+            rating: this.value,   // Sets the rating to the default value
+            ratingSent: false,   //Default value for the message
         };
     },
     methods: {
         async setRating(rating) {
-            this.rating = rating;
-            this.$emit('update:rating', rating);
+            this.rating = rating;   // Sets the rating to the value that the user clicked on
+            this.$emit('update:rating', rating);    // Sends the rating to the parent component in RecipeView
 
             try {
                 const postRating = { rating: this.rating };
-                const url = `https://jau22-recept-grupp5-1bixsi9xz341.reky.se/recipes/${this.$route.params.id}/ratings`;
 
-                const response = await fetch(url, {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
-                    body: JSON.stringify(postRating),
-                });
+                const response =
+                    await fetch(`https://jau22-recept-grupp5-1bixsi9xz341.reky.se/recipes/${this.$route.params.id}/ratings`,
+                        {
+                            method: 'POST',
+                            headers: {
+                                'Content-Type': 'application/json',
+                            },
+                            body: JSON.stringify(postRating),
+                        });
 
                 if (response.ok) {
-                    this.ratingSent = true;
+                    this.ratingSent = true;  // If the rating is posted, the message will appear
                 } else {
                     console.error('Failed to post rating');
                 }
