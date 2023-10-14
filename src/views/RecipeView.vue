@@ -32,19 +32,25 @@
                 <li v-for="(step, index) in recipe.instructions" :key="index">{{ step }}</li>
             </ol>
         </div>
+
+        <Rating v-model="recipe.rating" />  <!-- Rating component -->
+        <p style="text-align: center;">Betyg: {{ recipe.avgRating }}</p>
+
+        <CommentForm />
+        <CommentList />
     </div>
-    <CommentForm/>
-    <CommentList/>
 </template>
   
 <script>
 import CommentList from '@/components/CommentList.vue';
 import CommentForm from '@/components/CommentForm.vue';
+import Rating from '@/components/Rating.vue';
 
 export default {
     components: {
         CommentList,
-        CommentForm
+        CommentForm,
+        Rating,
     },
     data() {
         return {
@@ -159,7 +165,7 @@ export default {
     }
 
     .RecipeImage img {
-        max-width: 100%;
+        width: 500px;
         height: auto;
         border-radius: 10px;
         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
@@ -167,6 +173,30 @@ export default {
         margin-left: 50px;
     }
 
+    @media screen and (max-width: 720px) {
+        .RecipeDetails {
+            flex-direction: column;
+        }
+
+        .RecipeInfo {
+            width: 100%;
+        }
+
+        .RecipeImage img {
+            margin-left: 0;
+            width: 500px;
+        }
+    }
+
+    @media screen and (max-width: 540px) {
+        .RecipeImage img {
+            width: 100%;
+        }
+    }
+        
+    
+        
+    
     .RecipeInstructions h2 {
         font-size: 24px;
         color: #333;
@@ -185,4 +215,3 @@ export default {
         margin-bottom: 10px;
     }
 </style>
-
