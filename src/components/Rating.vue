@@ -83,4 +83,10 @@ export default {
     text-align: center;
     font-size: 26px;
 }
+
+@media screen and (max-width: 460px) {
+    .rating-wrapper li {
+        font-size: 35px;
+    }
+}
 </style>
