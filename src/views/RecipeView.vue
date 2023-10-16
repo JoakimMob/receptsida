@@ -33,8 +33,8 @@
             </ol>
         </div>
 
-        <Rating v-model="recipe.rating" />  <!-- Rating component -->
-        <p style="text-align: center;">Betyg: {{ recipe.avgRating }}</p>
+        <Rating v-model="recipe.rating"/>  <!-- Rating component -->
+        <!-- <p style="text-align: center;">Betyg: {{ Math.round(recipe.avgRating) }}</p> -->
 
         <CommentForm />
         <CommentList />

@@ -1,5 +1,5 @@
 <template>
-    <input class="search-box"  v-model="innerSearchQuery" placeholder="Sök efter kategori..." />
+    <input class="search-box"  v-model="innerSearchQuery" placeholder="Sök recept" />
     <div class="gallery-list">
         <Recipe v-for="recipe in filteredRecipes" :key="recipe.id" :recipe="recipe" />
     </div>
@@ -21,25 +21,25 @@ onMounted(fetchRecipes);
 
 // If a search query present filtering the recipes based on the user's input
 
+// Filter by Title
+
+const filteredRecipes = computed(() => {
+    if (!innerSearchQuery.value) return recipes.value;
+    
+    return recipes.value.filter(recipe =>
+    recipe.title.toLowerCase().includes(innerSearchQuery.value.toLowerCase())
+    );
+});
+
 // Filter by Category
 
-const filteredRecipes = computed(() => { 
+/* const filteredRecipes = computed(() => { 
     if (!innerSearchQuery.value) return recipes.value;
     
     return recipes.value.filter(recipe =>
     recipe.categories.some(category =>
     category.toLowerCase().includes(innerSearchQuery.value.toLowerCase())
     )
-    );
-});
-
-// Filter by Title
-
-/* const filteredRecipes = computed(() => {
-    if (!innerSearchQuery.value) return recipes.value;
-
-    return recipes.value.filter(recipe =>
-            recipe.title.toLowerCase().includes(innerSearchQuery.value.toLowerCase())
     );
 }); */
 

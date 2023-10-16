@@ -5,7 +5,9 @@
             <div class="card-info">
                 <p>{{ recipe.title }}</p>
                 <div class="rating">
-                   <span>Betyg {{ recipe.avgRating }}/5</span>
+
+                    <Star v-for="index in 5 " :is-selected="index < Math.round(recipe.avgRating)" :starValue="index" :is-clickable="false" />
+
                 </div>
                 <div class="time-ingredients">
                     <span>
@@ -18,10 +20,15 @@
 </template>
 
 <script>
+import Star from '@/components/Star.vue'
+
 export default {
+    components: {
+        Star
+    },
     props: {
         recipe: Object
-    }
+    },
 }
 </script>
 
@@ -73,5 +80,6 @@ export default {
 
 .rating {
     font-size: 16px;
-} 
+}
+
 </style>
