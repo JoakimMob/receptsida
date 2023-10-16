@@ -79,6 +79,10 @@ const submitComment = async () => {
 
 
 <style scoped>
+
+*{
+    font-family: sans-serif;
+}
 .container {
     display: flex;
     flex-direction: column;
@@ -86,7 +90,6 @@ const submitComment = async () => {
     justify-content: center;
     height: 100vh;
     height:50vh;
-    font-family: sans-serif;
     position:relative;
 }
 
@@ -153,6 +156,12 @@ button:hover {
 button:disabled {
     background-color: #cccccc;
     cursor: not-allowed;
+}
+
+.submit-success-msg {
+  text-align: center;
+  font-size: 24px; 
+  font-weight: bold;
 }
 
 </style>
