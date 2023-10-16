@@ -52,8 +52,8 @@ const filteredRecipes = computed(() => {
 <style scoped>
 .search-box {
     display: block;
-    margin: auto;
-    width: 50%;
+    margin: 2em auto;
+    width: 40%;
     height: 50px;
     padding-left: 35px;
     font-size: 18px;
@@ -70,8 +70,8 @@ const filteredRecipes = computed(() => {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    margin: 20px auto;
-    width: 75%;
+    margin: 6em auto;
+    width: 50%;
 }
 .gallery-list a {
         text-decoration: none;
