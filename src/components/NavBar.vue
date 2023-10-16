@@ -1,19 +1,19 @@
 <template>
     <div class="sidebar close">
-        <div class="logo-details">
+        <div class="logo-details"> <!-- Logo -->
             <span id=icon class="material-symbols-outlined">dinner_dining</span>
             <span class="logo_name"></span>
         </div>
         
         <ul class="nav-links">  
-            <li>
+            <li> <!-- Linking "startsida" button to HomeView -->
             <router-link to="/">
                 <i class='bx bx-home-heart'></i>
                 <span class="link_name">Startsida</span>
             </router-link>
             </li>
 
-            <li>
+            <li> <!-- Submeny -->
                 <div class="icon-link" @click="toggleMenu">
                     <a href="#">
                         <i class='bx bx-category'></i>
@@ -22,7 +22,7 @@
                     </a>
                 </div>
                 <ul class="sub-menu" :class="{'show-sub-menu': showSubMenu}">
-                    <li v-for="item in apiData" :key="item.id">
+                    <li v-for="item in apiData" :key="item.id"> <!-- Linking the diferent categories to the CategorisedView -->
                         <router-link :to="`/category/${item.name}`" @click="makeBold(item.name)">
                             <Categories :name="item.name" :count="item.count" />
                             <span :class="getCategoryClass(item.name)"></span>
@@ -47,7 +47,7 @@ export default {
             activeCategory: null,
         };
     },
-    created() {
+    created() { /* Fetching all categories from the api and converting to json format */
         fetch('https://jau22-recept-grupp5-1bixsi9xz341.reky.se/categories')
             .then(response => response.json())
             .then(data => { this.apiData = data; })
@@ -56,6 +56,7 @@ export default {
             });
     },
     methods: {
+        /* Makes the selected category bold in the navbar */
         makeBold(selectedCategory) {
             for (const element of this.categories) {
                 element.classList.remove("bolded")
@@ -63,6 +64,7 @@ export default {
             let currentCategory = document.getElementById(selectedCategory)
             currentCategory.classList.add("bolded")
         },
+        /* Toggles the sub menu to hide/show categories */
         toggleMenu() {
             this.showSubMenu = !this.showSubMenu;
         }
@@ -176,7 +178,7 @@ export default {
 .sidebar .nav-links li .sub-menu a:hover {
     opacity: 1;
 }
-
+/* Making navbar horisontal instead of vertical on devices with smaller screen than 1460 pixels */
 @media screen and (max-width: 1460px) {
   .sidebar {
     width: 100%;
@@ -204,15 +206,6 @@ export default {
     display: none;
   }
 }
-
-/* On screens that are less than 400px, display the bar vertically, instead of horizontally */
-
- /* @media screen and (max-width: 400px) { 
-  .sidebar a {
-    text-align: center;
-    float: none;
-  }
-} */
 
 .bolded {
     margin-left: -8px;
