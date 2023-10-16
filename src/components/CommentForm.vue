@@ -2,8 +2,8 @@
 
     <!-- Form for leaving a comment -->
 
+    <h2>Lämna en kommentar!</h2>
     <div class="container">
-        <h2>Lämna en kommentar!</h2>
         <div class="comment-form">
    
             <template v-if="isSubmittedSuccessfully">
@@ -83,39 +83,31 @@ const submitComment = async () => {
 *{
     font-family: sans-serif;
 }
+h2 {
+    text-align: center;
+    margin: 30px;
+}
 .container {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 100vh;
-    height:50vh;
     position:relative;
 }
 
-h2 {
-    margin-bottom: 20px;
-    text-align: center;
-    position: absolute;
-    top:15%;
-    
-}
 
 .comment-form {
     display: flex;
     flex-direction: column;
     gap: 15px;
-    max-width: 650px;
+    max-width: 700px;
     width: 100%;
     padding: 20px;
-    height:500px;
     background-color: #f7f7f7;
     border: 1px solid #e0e0e0;
-    border-radius: 8px;
+    border-radius: 5px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     align-items: center;
-    margin-bottom:100px;
-    margin-top:290px;
 }
 
 .name-input,
@@ -129,7 +121,9 @@ h2 {
 }
 
 .comment-textarea{
-    height:150px;
+    min-height: 50px;
+    height: 200px;
+    resize: vertical;
 }
 
 .name-input:focus,

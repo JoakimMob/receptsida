@@ -53,7 +53,7 @@ h2 {
 }
 
 .comments-container {
-  max-width: 600px;
+  max-width: 700px;
   margin: 2em auto;
   display: flex;
   flex-direction: column;
