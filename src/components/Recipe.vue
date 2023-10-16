@@ -5,7 +5,7 @@
             <div class="card-info">
                 <p>{{ recipe.title }}</p>
                 <div class="rating">
-                   <span>Betyg {{ recipe.avgRating }} / 5</span>
+                   <span>Betyg {{ recipe.avgRating }}/5</span>
                 </div>
                 <div class="time-ingredients">
                     <span>

@@ -20,15 +20,29 @@ const fetchRecipes = async () => {
 onMounted(fetchRecipes);
 
 // If a search query present filtering the recipes based on the user's input
-const filteredRecipes = computed(() => {
+
+// Filter by Category
+
+const filteredRecipes = computed(() => { 
+    if (!innerSearchQuery.value) return recipes.value;
+    
+    return recipes.value.filter(recipe =>
+    recipe.categories.some(category =>
+    category.toLowerCase().includes(innerSearchQuery.value.toLowerCase())
+    )
+    );
+});
+
+// Filter by Title
+
+/* const filteredRecipes = computed(() => {
     if (!innerSearchQuery.value) return recipes.value;
 
     return recipes.value.filter(recipe =>
-        recipe.categories.some(category =>
-            category.toLowerCase().includes(innerSearchQuery.value.toLowerCase())
-        )
+            recipe.title.toLowerCase().includes(innerSearchQuery.value.toLowerCase())
     );
-});
+}); */
+
 </script>
 
 <style scoped>
@@ -36,12 +50,18 @@ const filteredRecipes = computed(() => {
     display: block;
     margin: auto;
     width: 50%;
-    padding: 15px;
-    border-radius: 25px;
+    height: 50px;
+    padding-left: 35px;
+    font-size: 18px;
+    background-image: url('@/assets/magnifying_glass.webp');
+    background-repeat: no-repeat;
+    background-position: left center;
     border: 1px solid #ccc;
+    border-radius: 25px;
     box-shadow: 0 0 4mm rgba(0, 0, 0, 0.15);
     outline: none;
 }
+
 .gallery-list {
     display: flex;
     flex-wrap: wrap;
