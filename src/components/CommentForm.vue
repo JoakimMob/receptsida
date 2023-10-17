@@ -2,7 +2,7 @@
 
     <!-- Form for leaving a comment -->
 
-    <h2>Lämna en kommentar!</h2>
+    <h2> Lämna en kommentar 💬</h2>
     <div class="container">
         <div class="comment-form">
             <!--conditionally displaying success message or comment form-->
@@ -90,6 +90,7 @@ const submitComment = async () => {
 h2 {
     text-align: center;
     margin: 30px;
+    letter-spacing: .7px;
 }
 .container {
     display: flex;
@@ -108,7 +109,10 @@ h2 {
     width: 100%;
     padding: 20px;
     background-color: #f7f7f7;
+    
     border: 1px solid #e0e0e0;
+    border: 3px solid white;
+    
     border-radius: 5px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     align-items: center;
@@ -122,6 +126,8 @@ h2 {
     border-radius: 4px;
     transition: border-color 0.2s;
     margin-bottom: 10px;
+    border: 3px solid white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .comment-textarea{
@@ -132,7 +138,7 @@ h2 {
 
 .name-input:focus,
 .comment-textarea:focus {
-    border-color: #007BFF;
+    outline:none;
 }
 
 button {
@@ -140,15 +146,20 @@ button {
     padding: 10px 20px;
     border: none;
     border-radius: 4px;
-    background-color: #007BFF;
+    background: linear-gradient(to bottom, #01afe9, #0077b6, #016f94);
     color: white;
     cursor: pointer;
     font-size: 16px;
-    transition: background-color 0.2s;
+    transition: all 0.3s ease, transform 0.3s ease;
+    border: 2px solid white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
 }
 
 button:hover {
-    background-color: #0056b3;
+    background: linear-gradient(to bottom, #039aeb, #016f94, #014b64);
+    transform: translateY(-4px); 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
 }
 
 button:disabled {
@@ -158,8 +169,7 @@ button:disabled {
 
 .submit-success-msg {
   text-align: center;
-  font-size: 24px; 
-  font-weight: bold;
+  font-size: 20px; 
 }
 
 </style>

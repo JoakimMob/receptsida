@@ -68,6 +68,7 @@ h2 {
   width: 100%;
   background-color: #f9f9f9;
   border: 1px solid #ddd;
+  border: 3px solid white;
   border-radius: 5px;
   padding: 15px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);

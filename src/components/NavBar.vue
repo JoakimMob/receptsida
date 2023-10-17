@@ -1,7 +1,7 @@
 <template>
     <!--sidebar with a logo and navigation liks-->
     <div class="sidebar close">
-        <div class="logo-details">
+        <div class="logo-details"> <!-- Logo -->
             <span id=icon class="material-symbols-outlined">dinner_dining</span>
             <span class="logo_name"></span>
         </div>
@@ -15,7 +15,7 @@
             </router-link>
             </li>
 
-            <li>
+            <li> <!-- Submeny -->
                 <div class="icon-link" @click="toggleMenu">
                     <a href="#">
                         <!--categories option in sidebar with dropdown arrow-->
@@ -54,8 +54,8 @@ export default {
             activeCategory: null,   //currently active category
         };
     },
-    created() {
-        //fetch category data from api
+    created() { 
+        // Fetching all categories from the api and converting to json format
         fetch('https://jau22-recept-grupp5-1bixsi9xz341.reky.se/categories')
             .then(response => response.json())
             .then(data => { this.apiData = data; })
@@ -72,6 +72,7 @@ export default {
             let currentCategory = document.getElementById(selectedCategory)
             currentCategory.classList.add("bolded")
         },
+        /* Toggles the sub menu to hide/show categories */
         toggleMenu() {
             //toggle visibility of the sub-menu
             this.showSubMenu = !this.showSubMenu;
@@ -187,9 +188,7 @@ export default {
     opacity: 1;
     
 }
-
-/* On screens that are less than 1460px, display the bar vertically, instead of horizontally */
-
+/* Making navbar horisontal instead of vertical on devices with smaller screen than 1460 pixels */
 @media screen and (max-width: 1460px) {
 
   .sidebar {
@@ -236,15 +235,6 @@ export default {
   }
 }
 
-/* On screens that are less than 400px, display the bar vertically, instead of horizontally */
-
- /* @media screen and (max-width: 400px) { 
-  .sidebar a {
-    text-align: center;
-    float: none;
-  }
-} */
-
 .bolded {
     margin-left: -8px;
     padding: 0 8px 0 8px; 
@@ -253,6 +243,7 @@ export default {
     background: rgba(94, 93, 93, 0.664);
 }
 
+/* alternative styling. makes sub-menu display on side of nav bar 
 
 /* .sidebar.close .nav-links li .sub-menu{
     position: absolute;

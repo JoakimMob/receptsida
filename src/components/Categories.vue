@@ -8,9 +8,9 @@
 <script>
     export default {
         props: {
-            name: String,       //name of the category
-            count: Number,      //count of items in the category
-            isActive: Boolean   //indicates whether the category is active or not
+            name: String,
+            count: Number,
+            isActive: Boolean
         }
     }
 </script>
