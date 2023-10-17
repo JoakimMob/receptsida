@@ -7,8 +7,9 @@
     <div class="comments-container">
       <div class="comment-box" v-for="comment in comments" :key="comment.id">
         <p class="comment-name"><strong>{{ comment.name }}</strong></p>
+        <p class="comment-date">{{ formatCommentDateTime(comment.createdAt) }}</p>
         <p class="comment-text">{{ comment.comment }}</p>
-        <p class="comment-date">{{ comment.date }}</p>
+        
       </div>
     </div>
   </div>
@@ -33,43 +34,70 @@ const fetchComments = async () => {
   }
 };
 
+//Format date and time
+const formatCommentDateTime = (dateTime) => {
+  const dateObj = new Date(dateTime);
+  const formattedDate = dateObj.toLocaleDateString();
+  const formattedTime = dateObj.toLocaleTimeString([], {hour: '2-digit', minute: '2-digit'});
+  return `${formattedDate} kl. ${formattedTime}`;
+}
+
 onMounted(fetchComments);
 </script>
 
 <style scoped>
 h2 {
-    text-align: center;
-    margin-top:125px;
+  text-align: center;
+  margin-top: 2em;
+  font-size: 24px;
 }
 
 .comments-container {
-    max-width: 500px;
-    margin: 20px auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 15px;
-    margin-top:30px;
+  max-width: 700px;
+  margin: 2em auto;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 20px;
 }
 
 .comment-box {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 15px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.comment-info {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
 }
 
 .comment-name {
-    margin-bottom: 10px;
-}
-
-.comment-text {
-    text-align: center;
-    margin-bottom: 10px;
+  font-weight: bold;
+  font-size: 18px;
 }
 
 .comment-date {
-    font-size: 0.8em;
-    color: #777;
+  font-size: 0.9em;
+  color: #777;
+}
+
+.comment-text {
+  text-align: left;
+  margin-top: 10px;
+  font-size: 18px;
+}
+.comment-box:hover {
+  background-color: #eaeaea;
+  transition: background-color 0.3s ease;
 }
 </style>
+
+

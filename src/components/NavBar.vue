@@ -177,15 +177,32 @@ export default {
 
 .sidebar .nav-links li .sub-menu a:hover {
     opacity: 1;
+    
 }
 /* Making navbar horisontal instead of vertical on devices with smaller screen than 1460 pixels */
 @media screen and (max-width: 1460px) {
+
   .sidebar {
     width: 100%;
-    height: auto;
+    height: 60px;
     position: relative;
     margin-bottom: 20px;
+    
   }
+
+  .sidebar .nav-links li .sub-menu {
+    display: none;
+    padding: 6px 6px 14px 60px;
+    margin-top: -5px;
+    background-color: #11101d;
+    opacity: 0.9;
+    margin-left: 25px;
+    border-radius: 3px;
+}
+
+.sidebar .nav-links li:hover {
+    background: none;
+}
 
   .sidebar a {
     float: none;
@@ -195,6 +212,8 @@ export default {
 
   .sidebar .nav-links {
     padding-top: 0;
+    display: flex;
+    flex-direction: row;
   }
 
   .sidebar .logo-details {
