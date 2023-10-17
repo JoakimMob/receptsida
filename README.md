@@ -1,12 +1,11 @@
-# RecipeSite
+
+# Recipe Site
 
 ## Description
 
-This is a recipe application built with Vue.js, featuring an intuitive and user-friendly interface allowing users to explore and interact with a collection of recipes fetched dynamically via API. The application displays recipes with details such as ingredients, ratings, and other information. Users can filter recipes by category and add comments and ratings, creating an interactive experience.
+This is a recipe application built with Vue.js and single page application architecture, featuring an intuitive and user-friendly interface allowing users to explore and interact with a collection of recipes fetched dynamically via API. The application displays recipes with details such as ingredients, ratings, and other information. Users can filter recipes by category, add and view comments and ratings on recipes - creating an interactive user experience. The application is responsive and viewable on various screen sizes.
 
-#### Contributors
-
-Hanna Friberg, Ismail El kawwash, Joakim Moberg and Anna Axelsson
+---
 
 ## Technologies used:
 
@@ -14,6 +13,18 @@ Hanna Friberg, Ismail El kawwash, Joakim Moberg and Anna Axelsson
 - HTML
 - CSS
 - Json
+
+---
+
+## Project Contributors
+
+#### Developers
+
+Hanna Friberg, Ismail El kawwash, Joakim Moberg and Anna Axelsson
+
+#### Project managers
+
+Linn Söderman, Nimmi Kaur Gill and Ulrika Meyer
 
 ---
 

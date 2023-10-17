@@ -4,17 +4,15 @@
             <img :src="recipe.imageUrl">
             <div class="card-info">
                 <p>{{ recipe.title }}</p>
+                <div class="rating">
+
+                    <Star v-for="index in 5 " :is-selected="index < Math.round(recipe.avgRating)" :starValue="index" :is-clickable="false" />
+
+                </div>
                 <div class="time-ingredients">
                     <span>
                         <i class="fa-regular fa-clock"></i> {{ recipe.timeInMins }} min
                         {{ recipe.ingredients.length }} ingredienser</span>
-                    <div class="rating">
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                    </div>
                 </div>
             </div>
         </li>
@@ -22,10 +20,15 @@
 </template>
 
 <script>
+import Star from '@/components/Star.vue'
+
 export default {
+    components: {
+        Star
+    },
     props: {
         recipe: Object
-    }
+    },
 }
 </script>
 
@@ -77,5 +80,6 @@ export default {
 
 .rating {
     font-size: 16px;
-} 
+}
+
 </style>
