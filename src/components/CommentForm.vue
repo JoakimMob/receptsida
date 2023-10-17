@@ -5,24 +5,22 @@
     <h2> Lämna en kommentar 💬</h2>
     <div class="container">
         <div class="comment-form">
-            <!--conditionally displaying success message or comment form-->
+   
             <template v-if="isSubmittedSuccessfully">
-                <p class="submit-success-msg">Tack för din kommentar!</p> <!--success message after successful comment submission-->
+                <p class="submit-success-msg"> Tack för din kommentar!</p>
             </template>
 
             <template v-else>
-                <!--displaying validation messages-->
-                <div v-if="!name && attemptedSubmit">Var god fyll i ditt namn.</div> <!--name validation message-->
-                <input class="name-input" v-model="name" placeholder="Ditt namn" :disabled="isLoading" /> <!--name input field-->
+                <div v-if="!name && attemptedSubmit">Var god fyll i ditt namn.</div>
+                <input class="name-input" v-model="name" placeholder="Ditt namn" :disabled="isLoading" />
                 
-                <div v-if="!comment && attemptedSubmit">Var god skriv en kommentar.</div> <!--comment validation message-->
-                <textarea class="comment-textarea" v-model="comment" placeholder="Din kommentar" :disabled="isLoading"></textarea> <!--comment input field-->
+                <div v-if="!comment && attemptedSubmit">Var god skriv en kommentar.</div>
+                <textarea class="comment-textarea" v-model="comment" placeholder="Din kommentar" :disabled="isLoading"></textarea>
                 
-                <button @click="submitComment" :disabled="isLoading"> <!--comment submission button-->
-                    Skicka kommentar
+                <button @click="submitComment" :disabled="isLoading">
+                    Skicka
                 </button>
 
-                <!-- Displaying any additional success or error messages -->
                 <p v-if="successMessage.value">{{ successMessage.value }}</p>
             </template>
         </div>
@@ -51,14 +49,12 @@ const isSubmittedSuccessfully = ref(false);
 const submitComment = async () => {
     attemptedSubmit.value = true;
 
-    //validation checks for name & comment
     if (!name.value || !comment.value) {
-        return; //prevent comment submission of fields are empty
+        return;
     }
 
     isLoading.value = true;
 
-    //sending a POST request to submit the comment
     const response = await fetch(`https://jau22-recept-grupp5-1bixsi9xz341.reky.se/recipes/${route.params.id}/comments`, {
         method: 'POST',
         body: JSON.stringify({ name: name.value, comment: comment.value }),
@@ -68,7 +64,7 @@ const submitComment = async () => {
     isLoading.value = false;
 
     if (response.ok) {
-        isSubmittedSuccessfully.value = true;   //mark the comment as successfully submitted
+        isSubmittedSuccessfully.value = true;
     } else {
         const responseData = await response.json();
         successMessage.value = responseData.message || 'Något gick fel. Försök igen senare.';
@@ -111,6 +107,7 @@ h2 {
     background-color: #f7f7f7;
     
     border: 1px solid #e0e0e0;
+    border: 3px solid white;
     
     border-radius: 5px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -150,6 +147,7 @@ button {
     cursor: pointer;
     font-size: 16px;
     transition: all 0.3s ease, transform 0.3s ease;
+    border: 2px solid white;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 
 }
