@@ -219,9 +219,6 @@ export default {
         }
     }
         
-    
-        
-    
     .RecipeInstructions h2 {
         font-size: 24px;
         color: #333;
