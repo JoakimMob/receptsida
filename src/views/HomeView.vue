@@ -70,8 +70,8 @@ const filteredRecipes = computed(() => {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    margin: 6em auto;
-    width: 50%;
+    margin: 3em auto;
+    width: 75%;
 }
 .gallery-list a {
         text-decoration: none;
