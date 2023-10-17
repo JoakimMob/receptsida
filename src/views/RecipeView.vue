@@ -200,7 +200,7 @@ export default {
 
     @media screen and (max-width: 720px) {
         .RecipeDetails {
-            flex-direction: column;
+            flex-direction: column-reverse;
         }
 
         .RecipeInfo {
@@ -208,8 +208,9 @@ export default {
         }
 
         .RecipeImage img {
-            margin-left: 0;
-            width: 500px;
+            margin: 50px 0 10px 0;
+            width: 98%;
+            
         }
     }
 
@@ -218,7 +219,7 @@ export default {
             width: 100%;
         }
     }
-        
+
     .RecipeInstructions h2 {
         font-size: 24px;
         color: #333;
