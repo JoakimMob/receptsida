@@ -2,12 +2,12 @@
 
     <!-- Form for leaving a comment -->
 
-    <h2>💬 Lämna en kommentar </h2>
+    <h2> Lämna en kommentar 💬</h2>
     <div class="container">
         <div class="comment-form">
    
             <template v-if="isSubmittedSuccessfully">
-                <p class="submit-success-msg"> Tack för din kommentar! ❤️</p>
+                <p class="submit-success-msg"> Tack för din kommentar!</p>
             </template>
 
             <template v-else>
@@ -86,6 +86,7 @@ const submitComment = async () => {
 h2 {
     text-align: center;
     margin: 30px;
+    letter-spacing: .7px;
 }
 .container {
     display: flex;
