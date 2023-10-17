@@ -2,12 +2,12 @@
 
     <!-- Form for leaving a comment -->
 
-    <h2>💬 Lämna en kommentar! </h2>
+    <h2>💬 Lämna en kommentar </h2>
     <div class="container">
         <div class="comment-form">
    
             <template v-if="isSubmittedSuccessfully">
-                <p class="submit-success-msg">Tack för din kommentar!</p>
+                <p class="submit-success-msg"> Tack för din kommentar! ❤️</p>
             </template>
 
             <template v-else>
@@ -18,7 +18,7 @@
                 <textarea class="comment-textarea" v-model="comment" placeholder="Din kommentar" :disabled="isLoading"></textarea>
                 
                 <button @click="submitComment" :disabled="isLoading">
-                    Skicka kommentar
+                    Skicka
                 </button>
 
                 <p v-if="successMessage.value">{{ successMessage.value }}</p>
@@ -154,8 +154,7 @@ button:disabled {
 
 .submit-success-msg {
   text-align: center;
-  font-size: 24px; 
-  font-weight: bold;
+  font-size: 20px; 
 }
 
 </style>
