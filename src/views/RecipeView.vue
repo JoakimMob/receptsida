@@ -9,6 +9,14 @@
 
             <!-- Display estimated preparation time and number of ingredients -->
             <div class="MiniInfo">
+                <span class="star-wrapper">
+                    <Star 
+                        v-for="index in 5 " 
+                        :is-selected="index < Math.round(recipe.avgRating)" 
+                        :starValue="index"
+                        :is-clickable="false" 
+                        />
+                    </span>
                 <span id="TimeInMins"><i class="fa-regular fa-clock"></i> ca. {{ recipe.timeInMins }} min </span>
                 <span id="NumberOfIngredients">{{ recipe.ingredients.length }} ingredienser</span>
             </div>
@@ -59,6 +67,7 @@
 import CommentList from '@/components/CommentList.vue';
 import CommentForm from '@/components/CommentForm.vue';
 import Rating from '@/components/Rating.vue';
+import Star from '../components/Star.vue';
 
 export default {
     components: {
@@ -66,6 +75,7 @@ export default {
         CommentList,
         CommentForm,
         Rating,
+        Star
     },
     data() {
         return {
@@ -134,8 +144,10 @@ export default {
 
     .MiniInfo {
         display: inline-block;
+        width: 60%;
         background-color: #c0c7bd67;
         border-radius: 10px;
+        line-height: 1.6;
     }
 
     #TimeInMins {
@@ -203,12 +215,17 @@ export default {
             flex-direction: column-reverse;
         }
 
+        .MiniInfo {
+            width: 100%;
+            line-height: 0.7;
+        }
+
         .RecipeInfo {
             width: 100%;
         }
 
         .RecipeImage img {
-            margin: 50px 0 10px 0;
+            margin: 20px 0 10px 0;
             width: 98%;
             
         }
@@ -237,4 +254,10 @@ export default {
         color: #333;
         margin-bottom: 10px;
     }
+
+    .star-wrapper {
+        margin:auto;
+        font-size: 22px;
+    }
+
 </style>

@@ -43,7 +43,7 @@
  
 <script>
 import { RouterLink } from 'vue-router';
-import Categories from './Categories.vue';
+import Categories from '@/components/Categories.vue';
 
 export default {
     data() {
