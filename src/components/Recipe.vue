@@ -91,5 +91,6 @@ export default {
 
 .rating {
     font-size: 16px;
+    color: #64646480;
 }
 </style>
