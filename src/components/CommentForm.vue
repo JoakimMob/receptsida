@@ -136,15 +136,19 @@ button {
     padding: 10px 20px;
     border: none;
     border-radius: 4px;
-    background-color: #007BFF;
+    background: linear-gradient(to bottom, #01afe9, #0077b6, #016f94);
     color: white;
     cursor: pointer;
     font-size: 16px;
-    transition: background-color 0.2s;
+    transition: all 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+    border: 2px solid white;
 }
 
 button:hover {
-    background-color: #0056b3;
+    background: linear-gradient(to bottom, #039aeb, #016f94, #014b64);
+    transform: translateY(-4px); 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
 }
 
 button:disabled {
