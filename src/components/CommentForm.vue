@@ -104,7 +104,10 @@ h2 {
     width: 100%;
     padding: 20px;
     background-color: #f7f7f7;
+    
     border: 1px solid #e0e0e0;
+    border: 3px solid white;
+    
     border-radius: 5px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     align-items: center;
@@ -118,6 +121,8 @@ h2 {
     border-radius: 4px;
     transition: border-color 0.2s;
     margin-bottom: 10px;
+    border: 3px solid white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .comment-textarea{
@@ -128,7 +133,7 @@ h2 {
 
 .name-input:focus,
 .comment-textarea:focus {
-    border-color: #007BFF;
+    outline:none;
 }
 
 button {
@@ -141,8 +146,9 @@ button {
     cursor: pointer;
     font-size: 16px;
     transition: all 0.3s ease, transform 0.3s ease;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
     border: 2px solid white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
 }
 
 button:hover {
