@@ -7,8 +7,10 @@
             <h1>{{ recipe.title }}</h1> 
             <p>{{ recipe.description }}</p> 
 
-            <!-- Display estimated preparation time and number of ingredients -->
+            <!-- Display estimated preparation time, number of ingredients and average rating-->
             <div class="MiniInfo">
+                <span id="TimeInMins"><i class="fa-regular fa-clock"></i> ca. {{ recipe.timeInMins }} min </span>
+                <span id="NumberOfIngredients">{{ recipe.ingredients.length }} ingredienser</span>
                 <span class="star-wrapper">
                     <Star 
                         v-for="index in 5 " 
@@ -17,8 +19,6 @@
                         :is-clickable="false" 
                         />
                     </span>
-                <span id="TimeInMins"><i class="fa-regular fa-clock"></i> ca. {{ recipe.timeInMins }} min </span>
-                <span id="NumberOfIngredients">{{ recipe.ingredients.length }} ingredienser</span>
             </div>
         </div>
 
@@ -148,6 +148,7 @@ export default {
         background-color: #c0c7bd67;
         border-radius: 10px;
         line-height: 1.6;
+        padding-bottom: 10px;
     }
 
     #TimeInMins {
@@ -164,6 +165,10 @@ export default {
         font-weight: bold;
     }
 
+    .star-wrapper{
+        display: block;        
+    }
+
     .RecipeDetails {
         display: flex;
         justify-content: space-between;
@@ -171,7 +176,7 @@ export default {
     }
 
     .RecipeInfo {
-        width: 45%; /* Adjust the width as needed */
+        width: 45%; 
     }
 
     .RecipeInfo h2 {
