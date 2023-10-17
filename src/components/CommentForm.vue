@@ -2,7 +2,7 @@
 
     <!-- Form for leaving a comment -->
 
-    <h2>Lämna en kommentar!</h2>
+    <h2>💬 Lämna en kommentar! </h2>
     <div class="container">
         <div class="comment-form">
    
