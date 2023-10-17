@@ -1,4 +1,5 @@
 <template>
+    <!--component to display category name and count-->
     <div :id=name class="categories">
         {{ name }} ({{ count }})
     </div>
@@ -7,8 +8,8 @@
 <script>
     export default {
         props: {
-            name: String,
-            count: Number,
+            name: String,       //name of the category
+            count: Number,      //count of items in the category
         }
     }
 </script>

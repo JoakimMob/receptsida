@@ -8,17 +8,17 @@ const router = createRouter({
     routes: [
         {
             path: '/', 
-            component: HomeView
+            component: HomeView     //route for the home view
         },
         {
             path: '/recipe/:id',
             name: 'recipe',
-            component: RecipeView
+            component: RecipeView   //route for individual recipe view
         },
         {
             path: '/category/:categoryName',
             name: 'category',
-            component: CategorisedView
+            component: CategorisedView  //route for categorised recipe view
         }
     ]
 })

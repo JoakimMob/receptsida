@@ -1,19 +1,21 @@
+<template>
+    <!--section containing header and logo-->
+    <div class="header-wrapper">
+        <h1>{{ header }}</h1>   <!--main header title-->
+        <img id="logo" src="../assets/kock-färg.png" alt="logo" />   <!--logo image-->
+    </div>
+</template>
+
 <script>
 export default {
     data() {
         return {
+            //the header text to display
             header: 'The Italian Stallions'
         }
     }
 }
 </script>
-
-<template>
-    <div class="header-wrapper">
-        <h1>{{ header }}</h1>
-        <img id="logo" src="../assets/kock-färg.png" alt="logo" />
-    </div>
-</template>
 
 <style>
 .header-wrapper {

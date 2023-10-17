@@ -1,14 +1,25 @@
 <template>
+    <!--a clickable link to view a specific recipe-->
     <router-link :to="'/recipe/' + recipe._id">
+
         <li class="card">
+            <!--display the recipe's image-->
             <img :src="recipe.imageUrl">
+
             <div class="card-info">
+                <!--display the recipe's title-->
                 <p>{{ recipe.title }}</p>
+
                 <div class="rating">
-
-                    <Star v-for="index in 5 " :is-selected="index < Math.round(recipe.avgRating)" :starValue="index" :is-clickable="false" />
-
+                    <!--render a star rating component based on the average rating of the recipe-->
+                    <Star 
+                        v-for="index in 5 " 
+                        :is-selected="index < Math.round(recipe.avgRating)" 
+                        :starValue="index"
+                        :is-clickable="false" 
+                        />
                 </div>
+
                 <div class="time-ingredients">
                     <span>
                         <i class="fa-regular fa-clock"></i> {{ recipe.timeInMins }} min
@@ -27,7 +38,7 @@ export default {
         Star
     },
     props: {
-        recipe: Object
+        recipe: Object  //prop for passing recipe data
     },
 }
 </script>
@@ -81,5 +92,4 @@ export default {
 .rating {
     font-size: 16px;
 }
-
 </style>

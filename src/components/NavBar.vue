@@ -1,4 +1,5 @@
 <template>
+    <!--sidebar with a logo and navigation liks-->
     <div class="sidebar close">
         <div class="logo-details"> <!-- Logo -->
             <span id=icon class="material-symbols-outlined">dinner_dining</span>
@@ -6,7 +7,8 @@
         </div>
         
         <ul class="nav-links">  
-            <li> <!-- Linking "startsida" button to HomeView -->
+            <li>
+                <!--link to the home page in the sidebar-->
             <router-link to="/">
                 <i class='bx bx-home-heart'></i>
                 <span class="link_name">Startsida</span>
@@ -16,14 +18,19 @@
             <li> <!-- Submeny -->
                 <div class="icon-link" @click="toggleMenu">
                     <a href="#">
+                        <!--categories option in sidebar with dropdown arrow-->
                         <i class='bx bx-category'></i>
                         <span class="link_name">Kategorier</span>
                         <i class='bx bx-chevron-down'></i>
                     </a>
                 </div>
+                <!--dropdown submenu that is displayed when categories option is clicked-->
                 <ul class="sub-menu" :class="{'show-sub-menu': showSubMenu}">
-                    <li v-for="item in apiData" :key="item.id"> <!-- Linking the diferent categories to the CategorisedView -->
+                    <!--iterating through categories in apiData-->
+                    <li v-for="item in apiData" :key="item.id">
+                        <!--link to specific category page based on item.name-->
                         <router-link :to="`/category/${item.name}`" @click="makeBold(item.name)">
+                            <!--diplaying the category name and count how many recipes are included in specific category-->
                             <Categories :name="item.name" :count="item.count" />
                             <span :class="getCategoryClass(item.name)"></span>
                         </router-link>
@@ -41,13 +48,14 @@ import Categories from './Categories.vue';
 export default {
     data() {
         return {
-            apiData: [],
-            categories: document.getElementsByClassName("categories"),
-            showSubMenu: false,
-            activeCategory: null,
+            apiData: [],    //array to store category data
+            categories: document.getElementsByClassName("categories"),  //list of categories
+            showSubMenu: false,     //flag to show/hide sub-menu
+            activeCategory: null,   //currently active category
         };
     },
-    created() { /* Fetching all categories from the api and converting to json format */
+    created() { 
+        // Fetching all categories from the api and converting to json format
         fetch('https://jau22-recept-grupp5-1bixsi9xz341.reky.se/categories')
             .then(response => response.json())
             .then(data => { this.apiData = data; })
@@ -56,7 +64,7 @@ export default {
             });
     },
     methods: {
-        /* Makes the selected category bold in the navbar */
+        //remove bold styling from all categories and make the selected one bold
         makeBold(selectedCategory) {
             for (const element of this.categories) {
                 element.classList.remove("bolded")
@@ -66,6 +74,7 @@ export default {
         },
         /* Toggles the sub menu to hide/show categories */
         toggleMenu() {
+            //toggle visibility of the sub-menu
             this.showSubMenu = !this.showSubMenu;
         }
     },
@@ -234,6 +243,7 @@ export default {
     background: rgba(94, 93, 93, 0.664);
 }
 
+/* alternative styling. makes sub-menu display on side of nav bar 
 
 /* .sidebar.close .nav-links li .sub-menu{
     position: absolute;

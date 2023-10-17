@@ -1,17 +1,22 @@
 <template>
+    <!--input element for searching recipes with two-way bindning to the "innerSearchQuery" variable-->
     <input class="search-box"  v-model="innerSearchQuery" placeholder="Sök recept" />
+    <!--container div for displaying the recipe gallery-->
     <div class="gallery-list">
+        <!--loop through filteredRecipes and render each recipe using recipe component-->
         <Recipe v-for="recipe in filteredRecipes" :key="recipe.id" :recipe="recipe" />
     </div>
 </template>
 
 <script setup>
+//import components
 import { ref, computed, onMounted } from 'vue';
 import Recipe from '@/components/Recipe.vue';
 
-const innerSearchQuery = ref(''); // Reactive var for user input
-const recipes = ref([]); // Initializing the var to hold the list of all recipes fetched from the server
+const innerSearchQuery = ref(''); // reactive variable for user input
+const recipes = ref([]); // initializing the variable to hold the list of all recipes fetched from api
 
+//fetch recipes from api when component is mounted
 const fetchRecipes = async () => {
     const response = await fetch('https://jau22-recept-grupp5-1bixsi9xz341.reky.se/recipes');
     const data = await response.json();
@@ -19,9 +24,8 @@ const fetchRecipes = async () => {
 }
 onMounted(fetchRecipes);
 
-// If a search query present filtering the recipes based on the user's input
-
-// Filter by Title
+//compute filtered recipes based on user's input
+// filter by title
 
 const filteredRecipes = computed(() => {
     if (!innerSearchQuery.value) return recipes.value;
@@ -31,7 +35,7 @@ const filteredRecipes = computed(() => {
     );
 });
 
-// Filter by Category
+// filter by category
 
 /* const filteredRecipes = computed(() => { 
     if (!innerSearchQuery.value) return recipes.value;
@@ -48,8 +52,8 @@ const filteredRecipes = computed(() => {
 <style scoped>
 .search-box {
     display: block;
-    margin: auto;
-    width: 50%;
+    margin: 2em auto;
+    width: 40%;
     height: 50px;
     padding-left: 35px;
     font-size: 18px;
@@ -66,8 +70,8 @@ const filteredRecipes = computed(() => {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    margin: 20px auto;
-    width: 75%;
+    margin: 6em auto;
+    width: 50%;
 }
 .gallery-list a {
         text-decoration: none;
