@@ -111,7 +111,6 @@ h2 {
     background-color: #f7f7f7;
     
     border: 1px solid #e0e0e0;
-    border: 3px solid white;
     
     border-radius: 5px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -151,7 +150,6 @@ button {
     cursor: pointer;
     font-size: 16px;
     transition: all 0.3s ease, transform 0.3s ease;
-    border: 2px solid white;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 
 }
