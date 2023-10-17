@@ -9,7 +9,6 @@
         props: {
             name: String,
             count: Number,
-            isActive: Boolean
         }
     }
 </script>
